@@ -11,8 +11,9 @@
         android:layout_width="386dp"
         android:layout_height="59dp"
         android:background="@color/bgcolor"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -34,11 +35,12 @@
     </android.support.constraint.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/inputback"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:background="@drawable/mybutton"
+        android:onClick="inputBack"
         android:text="GO BUZZING BACK"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="#fde694"
@@ -54,24 +56,24 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/mybutton"
-        android:text="GET RESULTS"
+        android:onClick="calculateBMI"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#fde694"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/inputback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="386dp"
+        android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:background="@color/bgcolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/inputback"
         app:layout_constraintVertical_bias="1.0">
 
     </android.support.constraint.ConstraintLayout>
@@ -117,9 +119,9 @@
                 app:srcCompat="@drawable/icon" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/age"
                 android:layout_width="320dp"
-                android:layout_height="30dp"
+                android:layout_height="32dp"
                 android:background="@color/cardcolor"
                 android:ems="10"
                 android:inputType="number"
@@ -132,12 +134,12 @@
                 app:layout_constraintVertical_bias="0.359" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/weight"
                 android:layout_width="320dp"
                 android:layout_height="30dp"
                 android:background="@color/cardcolor"
                 android:ems="10"
-                android:inputType="numberDecimal"
+                android:inputType="number|numberDecimal"
                 android:textColor="@color/bgcolor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -147,12 +149,12 @@
                 app:layout_constraintVertical_bias="0.666" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/height"
                 android:layout_width="320dp"
                 android:layout_height="30dp"
                 android:background="@color/cardcolor"
                 android:ems="10"
-                android:inputType="numberDecimal"
+                android:inputType="number|numberDecimal"
                 android:textColor="@color/bgcolor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -208,4 +210,20 @@
 
         </android.support.constraint.ConstraintLayout>
 
-    </android.support.v7.widget.CardView></android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="127dp"
+        android:layout_height="16dp"
+        android:text="GET RESULTS"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#fde694"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.507" />
+</android.support.constraint.ConstraintLayout>

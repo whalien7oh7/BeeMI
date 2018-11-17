@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BeeMI</string>
+    <string name="underweight" />
+    <string name="normal" />
+    <string name="overweight" />
+    <string name="obese_class_i" />
+    <string name="obese_class_iii" />
+    <string name="obese" />
+    <string name="extremelyobese" />
 </resources>
