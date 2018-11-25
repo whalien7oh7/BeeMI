@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class InputActivity extends AppCompatActivity {
+public class InputActivity extends AppCompactActivity {
     private EditText age;
     private EditText height;
     private EditText weight;
@@ -57,11 +57,10 @@ public class InputActivity extends AppCompatActivity {
         }
 
         bmiLabel = bmi + "\n\n" + bmiLabel;
-        result.setText(bmiLabel);
 
         Intent i = new Intent(this, ResultActivity.class);
 
-        String getrec=result.getText().toString();
+        String getrec=bmiLabel;
 
 //Create the bundle
         Bundle bundle = new Bundle();
@@ -76,7 +75,7 @@ public class InputActivity extends AppCompatActivity {
 
         startActivity(i);
 
-}
+    }
 
     public void inputBack(View v){
         Intent i = null, chooser = null;
