@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
-public class InputActivity extends AppCompactActivity {
+
+public class InputActivity extends AppCompatActivity {
     private EditText age;
     private EditText height;
     private EditText weight;
-    private TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +19,6 @@ public class InputActivity extends AppCompactActivity {
         age = (EditText) findViewById(R.id.age);
         height = (EditText) findViewById(R.id.height);
         weight = (EditText) findViewById(R.id.weight);
-        result = (TextView) findViewById(R.id.result);
     }
 
     public void calculateBMI(View v) {
@@ -59,15 +57,21 @@ public class InputActivity extends AppCompactActivity {
         bmiLabel = bmi + "\n\n" + bmiLabel;
 
         Intent i = new Intent(this, ResultActivity.class);
+        String ageStr = age.getText().toString();
+        String heightStr = height.getText().toString();
+        String weightStr = weight.getText().toString();
+        String getresult=bmiLabel;
 
-        String getrec=bmiLabel;
+
 
 //Create the bundle
         Bundle bundle = new Bundle();
 
 //Add your data to bundle
-        bundle.putString("stuff", getrec);
-
+        bundle.putString("Result", getresult);
+        bundle.putString("Age", ageStr);
+        bundle.putString("Height", heightStr);
+        bundle.putString("Weight", weightStr);
 //Add the bundle to the intent
         i.putExtras(bundle);
 
