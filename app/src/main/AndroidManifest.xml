@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".InputActivity" />
         <activity android:name=".ResultActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".SplashScreen"></activity>
     </application>
 
 </manifest>

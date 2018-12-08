@@ -83,7 +83,7 @@ public class InputActivity extends AppCompatActivity {
 
     public void inputBack(View v){
         Intent i = null, chooser = null;
-        if(v.getId() == R.id.inputback){
+        if(v.getId() == R.id.checklist){
             i = new Intent(this, MainActivity.class);
             startActivity(i); }
         /*else if(v.getId() == R.id.act2map){

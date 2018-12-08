@@ -35,7 +35,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <Button
-        android:id="@+id/inputback"
+        android:id="@+id/checklist"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
@@ -61,7 +61,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#fde694"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/inputback"
+        app:layout_constraintBottom_toTopOf="@+id/checklist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputback"
+        app:layout_constraintTop_toBottomOf="@+id/checklist"
         app:layout_constraintVertical_bias="1.0">
 
     </android.support.constraint.ConstraintLayout>

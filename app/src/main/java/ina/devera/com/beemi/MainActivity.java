@@ -30,4 +30,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(chooser); } */
     }
 
+    public void checkList(View v){
+        Intent i = null, chooser = null;
+        if(v.getId() == R.id.checklist){
+            i = new Intent(this, ListActivity.class);
+            startActivity(i); }
+        /*else if(v.getId() == R.id.act2map){
+            i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("geo:14.5889, 120.9753"));
+            chooser = Intent.createChooser(i, "Choose App to be Used");
+            startActivity(chooser); } */
+    }
+
 }
