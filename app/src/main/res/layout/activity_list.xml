@@ -53,13 +53,14 @@
                 android:layout_height="28dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="HONEYCOMB'S RECIPE LIST"
                 android:textColor="@color/cardcolor"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/editText"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,10 +73,14 @@
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Search..."
+                android:text="Search Recipe..."
+                android:fontFamily="@font/bahnschrift"
+                android:textColor="@color/cardcolor"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.094"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,373 +90,633 @@
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="12dp"
+                android:fontFamily="@font/bahnschrift"
                 android:text="Meals Fit For A Normal Bee >"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-            <ScrollView
-                android:id="@+id/scrollablContent2"
+            <android.support.v7.widget.CardView
+                android:id="@+id/card1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
 
                 <LinearLayout
-                    android:id="@+id/content"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="250dp"
                     android:orientation="vertical">
 
-                    <android.support.v7.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        app:cardCornerRadius="3dp">
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="291dp"
-                            android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
 
-                            <ImageView
-                                android:id="@+id/Gauge"
-                                android:layout_width="match_parent"
-                                android:layout_height="204dp"
-                                android:src="@drawable/beemi" />
-
-                            <TextView
-                                android:id="@+id/textView3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/bahnschrift"
-                                android:gravity="center"
-                                android:text=" Honeycomb buzzes your BMI is..."
-                                android:textColor="@color/cardcolor"
-                                android:textStyle="bold" />
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="10dp" />
-
-                            <TextView
-                                android:id="@+id/Result"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/bahnschrift"
-                                android:gravity="center"
-                                android:text="Result"
-                                android:textColor="@color/cardcolor"
-                                android:textStyle="bold" />
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="11dp" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/Age"
-                                    android:layout_width="60dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:gravity="center"
-                                    android:text=" Age "
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/Height"
-                                    android:layout_width="40dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:gravity="center"
-                                    android:text="| Height"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/Weight"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:gravity="center"
-                                    android:text="| Weight"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        app:cardCornerRadius="3dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="291dp"
-                            android:orientation="vertical">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="60dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_weight="1" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="34dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-
-                                    android:id="@+id/textView12"
-                                    android:layout_width="290dp"
-                                    android:layout_height="33dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:text="Honeycomb's Recommendation"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:id="@+id/imageView8"
-                                    android:layout_width="55dp"
-                                    android:layout_height="35dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/icon" />
-
-                            </LinearLayout>
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="45dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_weight="1" />
-
-                            <ImageButton
-                                android:id="@+id/Recommendation"
-                                android:layout_width="match_parent"
-                                android:layout_height="198dp"
-                                android:background="@null"
-                                android:onClick="clickLink"
-                                android:src="@drawable/beemi" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/FoodName"
-                                    android:layout_width="387dp"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:gravity="center"
-                                    android:text="Food Name"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="375dp"
-                        android:layout_height="296dp"
-                        android:layout_margin="10dp"
-                        app:cardCornerRadius="3dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="60dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_weight="1" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-
-                                    android:id="@+id/textView13"
-                                    android:layout_width="312dp"
-                                    android:layout_height="35dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:text="Honeycomb's Nutrient Chart"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:id="@+id/imageView4"
-                                    android:layout_width="55dp"
-                                    android:layout_height="35dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/icon" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="match_parent"
-                        android:layout_height="294dp"
-                        android:layout_margin="10dp"
-                        card_view:cardCornerRadius="3dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="73dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-
-                                    android:id="@+id/textView2"
-                                    android:layout_width="312dp"
-                                    android:layout_height="35dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:text="Honeycomb's Suggestion"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:id="@+id/imageView3"
-                                    android:layout_width="55dp"
-                                    android:layout_height="35dp"
-                                    android:layout_weight="1"
-                                    android:src="@drawable/icon" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_weight="1"
-                                android:orientation="horizontal"
-                                tools:layout_height="35dp">
-
-                                <TextView
-                                    android:id="@+id/textView5"
-                                    android:layout_width="3dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:text="Your BMI is "
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/Evaluation"
-                                    android:layout_width="156dp"
-                                    android:layout_height="63dp"
-                                    android:layout_weight="1"
-                                    android:fontFamily="@font/bahnschrift"
-                                    android:text="Result"
-                                    android:textColor="@color/bgcolor"
-                                    android:textSize="30sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="55dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/textView11"
-                                    android:layout_width="212dp"
-                                    android:layout_height="33dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="I suggest you might like this other meals as well"
-                                    android:textColor="@color/cardcolor"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/Link1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:clickable="true"
-                                    android:onClick="onClick"
-                                    android:text="Link 1"
-                                    android:textColor="#828fe1" />
-
-                                <TextView
-                                    android:id="@+id/Link2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:clickable="true"
-                                    android:onClick="onClick"
-                                    android:text="Link 2"
-                                    android:textColor="#828fe1" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <Button
-                        android:id="@+id/checklist"
-                        android:layout_width="266dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="72dp"
-                        android:layout_marginLeft="65dp"
-                        android:layout_marginTop="25dp"
-                        android:background="@drawable/mybutton"
-                        android:fontFamily="@font/bahnschrift"
-                        android:onClick="inputBack"
-                        android:text="BACK TO THE BEEHIVE"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                        android:textColor="#fde694"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
 
                 </LinearLayout>
-            </ScrollView>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Time To Buzz In For The Overweight"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="You're Too Fit to Bee Underweight >"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card8"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card9"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Take A Break For Being Extremely Obese >"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card11"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card12"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <Space
                 android:layout_width="match_parent"
@@ -461,12 +726,174 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="12dp"
-                android:text="Time To Buzz In For The Overweight"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Diet Meals For Obese Bees >"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card13"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card14"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card15"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/beemi" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bahnschrift"
+                            android:text="Recipe Name"
+                            android:textColor="@color/cardcolor"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.069"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                            app:layout_constraintVertical_bias="0.577" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/checklist"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="72dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/mybutton"
+                android:fontFamily="@font/bahnschrift"
+                android:onClick="onBack"
+                android:text="BACK TO THE BEEHIVE"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="#fde694"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
     </ScrollView>

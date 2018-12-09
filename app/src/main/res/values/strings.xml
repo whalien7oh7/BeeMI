@@ -7,4 +7,5 @@
     <string name="obese_class_iii" />
     <string name="obese" />
     <string name="extremelyobese" />
+    <string name="error">Buzz!! Check your Inputs Correctly! </string>
 </resources>

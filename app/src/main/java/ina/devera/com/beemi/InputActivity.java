@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 
 public class InputActivity extends AppCompatActivity {
@@ -41,6 +44,12 @@ public class InputActivity extends AppCompatActivity {
 
             displayBMI(bmi);
         }
+
+        else {
+            Toast.makeText(InputActivity.this,
+                    R.string.error,
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void displayBMI(float bmi) {
@@ -63,7 +72,12 @@ public class InputActivity extends AppCompatActivity {
             imageView = "extremelyobese";
         }
         String eval = bmiLabel;
-        bmiLabel = bmi + "";
+        NumberFormat formatter = NumberFormat.getNumberInstance();
+        formatter.setMinimumFractionDigits(2);
+        formatter.setMaximumFractionDigits(2);
+        bmiLabel = formatter.format(bmi) + "";
+
+
 
         Intent i = new Intent(this, ResultActivity.class);
         String ageStr = age.getText().toString();

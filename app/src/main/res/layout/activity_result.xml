@@ -18,15 +18,16 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:gravity="center"
             android:id="@+id/textView"
             android:layout_width="75dp"
             android:layout_height="36dp"
+            android:gravity="center"
             android:text="BEEMI"
             android:textColor="@color/textcolor"
             android:textSize="25sp"
             android:textStyle="bold"
             android:typeface="sans"
+            app:fontFamily="@font/bahnschriftnormal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -236,7 +237,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
@@ -256,8 +257,19 @@
                             android:layout_width="55dp"
                             android:layout_height="35dp"
                             android:layout_weight="1"
-                            android:src="@drawable/icon" />
+                            android:src="@drawable/icon"
+                            tools:layout_editor_absoluteX="111dp"
+                            tools:layout_editor_absoluteY="415dp" />
+
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/Nutrients"
+                        android:layout_width="match_parent"
+                        android:layout_height="311dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/batss" />
+
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -303,9 +315,14 @@
 
                     </LinearLayout>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="135dp"
                         android:layout_weight="1"
                         android:orientation="horizontal"
                         tools:layout_height="35dp">
@@ -335,7 +352,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
@@ -343,33 +360,46 @@
                             android:layout_width="212dp"
                             android:layout_height="33dp"
                             android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/bahnschrift"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:text="I suggest you might like this other meals as well"
                             android:textColor="@color/cardcolor"
                             android:textStyle="bold" />
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/Link1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
                             android:layout_weight="1"
                             android:clickable="true"
-                            android:onClick="onClick"
+                            android:fontFamily="@font/bahnschrift"
+                            android:onClick="clickExtraLink1"
                             android:text="Link 1"
                             android:textColor="#828fe1" />
 
                         <TextView
                             android:id="@+id/Link2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
                             android:layout_weight="1"
                             android:clickable="true"
-                            android:onClick="onClick"
+                            android:fontFamily="@font/bahnschrift"
+                            android:onClick="clickExtraLink2"
                             android:text="Link 2"
                             android:textColor="#828fe1" />
-
                     </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -383,7 +413,7 @@
                 android:layout_marginTop="25dp"
                 android:background="@drawable/mybutton"
                 android:fontFamily="@font/bahnschrift"
-                android:onClick="inputBack"
+                android:onClick="onBack"
                 android:text="BACK TO THE BEEHIVE"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:textColor="#fde694"
