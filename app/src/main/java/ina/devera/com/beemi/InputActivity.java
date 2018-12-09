@@ -3,6 +3,7 @@ package ina.devera.com.beemi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -16,10 +17,13 @@ public class InputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
+        Log.d("Log: ", "onCreate() session has been initiated");
+
         age = (EditText) findViewById(R.id.age);
         height = (EditText) findViewById(R.id.height);
         weight = (EditText) findViewById(R.id.weight);
     }
+
 
     public void calculateBMI(View v) {
         String ageStr = age.getText().toString();
@@ -41,20 +45,25 @@ public class InputActivity extends AppCompatActivity {
 
     private void displayBMI(float bmi) {
         String bmiLabel = "";
-
-        if (Float.compare(bmi, 15f) <= 0) {
-            bmiLabel = getString(R.string.underweight);
+        String imageView = "";
+        if (Float.compare(bmi, 0) >= 0 && Float.compare(bmi, 18.5f) <=0 ) {
+            bmiLabel = "Underweight";
+            imageView = "underweight";
         } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
-            bmiLabel = getString(R.string.normal);
+            bmiLabel = "Normal";
+            imageView = "normal";
         } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
-            bmiLabel = getString(R.string.overweight);
+            bmiLabel = "Overweight";
+            imageView = "overweight";
         } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
-            bmiLabel = getString(R.string.obese);
+            bmiLabel = "Obese";
+            imageView = "obese";
         } else {
-            bmiLabel = getString(R.string.extremelyobese);
+            bmiLabel = "Extremely Obese";
+            imageView = "extremelyobese";
         }
-
-        bmiLabel = bmi + "\n\n" + bmiLabel;
+        String eval = bmiLabel;
+        bmiLabel = bmi + "";
 
         Intent i = new Intent(this, ResultActivity.class);
         String ageStr = age.getText().toString();
@@ -62,12 +71,12 @@ public class InputActivity extends AppCompatActivity {
         String weightStr = weight.getText().toString();
         String getresult=bmiLabel;
 
-
-
 //Create the bundle
         Bundle bundle = new Bundle();
 
 //Add your data to bundle
+        bundle.putString("Evaluation", eval);
+        bundle.putString("Gauge", imageView);
         bundle.putString("Result", getresult);
         bundle.putString("Age", ageStr);
         bundle.putString("Height", heightStr);
@@ -86,11 +95,7 @@ public class InputActivity extends AppCompatActivity {
         if(v.getId() == R.id.checklist){
             i = new Intent(this, MainActivity.class);
             startActivity(i); }
-        /*else if(v.getId() == R.id.act2map){
-            i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("geo:14.5889, 120.9753"));
-            chooser = Intent.createChooser(i, "Choose App to be Used");
-            startActivity(chooser); } */
+
     }
 
 

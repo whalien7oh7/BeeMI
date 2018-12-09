@@ -23,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId() == R.id.checkbmi){
             i = new Intent(this, InputActivity.class);
             startActivity(i); }
-        /*else if(v.getId() == R.id.act2map){
-            i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("geo:14.5889, 120.9753"));
-            chooser = Intent.createChooser(i, "Choose App to be Used");
-            startActivity(chooser); } */
     }
 
     public void checkList(View v){
