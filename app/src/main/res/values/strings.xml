@@ -8,4 +8,5 @@
     <string name="obese" />
     <string name="extremelyobese" />
     <string name="error">Buzz!! Check your Inputs Correctly! </string>
+    <string name="error2">Buzz!! Take the BMI Test first! </string>
 </resources>

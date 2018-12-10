@@ -15,7 +15,7 @@ public class InputActivity extends AppCompatActivity {
     private EditText age;
     private EditText height;
     private EditText weight;
-
+    public static String eval = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +71,7 @@ public class InputActivity extends AppCompatActivity {
             bmiLabel = "Extremely Obese";
             imageView = "extremelyobese";
         }
-        String eval = bmiLabel;
+        eval = bmiLabel;
         NumberFormat formatter = NumberFormat.getNumberInstance();
         formatter.setMinimumFractionDigits(2);
         formatter.setMaximumFractionDigits(2);

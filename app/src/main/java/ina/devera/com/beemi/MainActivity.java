@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkList(View v){
-        Intent i = null, chooser = null;
-        if(v.getId() == R.id.checklist){
+        Intent i = null;
+        if (!InputActivity.eval.equals("")) {
             i = new Intent(this, ListActivity.class);
             startActivity(i); }
+        else {
+            Toast.makeText(MainActivity.this,
+                    R.string.error2,
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

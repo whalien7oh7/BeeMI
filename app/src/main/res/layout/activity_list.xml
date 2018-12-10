@@ -30,67 +30,101 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
-    <ScrollView
-        android:id="@+id/scrollablContent1"
-        android:layout_width="390dp"
-        android:layout_height="402dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/scrollablContent1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-        <LinearLayout
-            android:id="@+id/content1"
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <TextView
+            android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/bahnschrift"
+            android:text="HONEYCOMB'S RECIPE LIST"
+            android:textColor="@color/cardcolor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/Searcc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.577" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="28dp" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:fontFamily="@font/bahnschrift"
-                android:text="HONEYCOMB'S RECIPE LIST"
-                android:textColor="@color/cardcolor"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.069"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                app:layout_constraintVertical_bias="0.577" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
+                android:id="@+id/Searcc"
+                android:layout_width="650dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
                 android:ems="10"
+                android:fontFamily="@font/bahnschrift"
                 android:inputType="textPersonName"
                 android:text="Search Recipe..."
-                android:fontFamily="@font/bahnschrift"
-                android:textColor="@color/cardcolor"
+                android:textColor="@color/cardview_dark_background"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.094"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
+            <ImageButton
+                android:id="@+id/Search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="search"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollablContent1"
+        android:layout_width="390dp"
+        android:layout_height="285dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:id="@+id/content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="Meals Fit For A Normal Bee >"
@@ -98,7 +132,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/Searcc" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card1"
@@ -118,30 +152,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView1"
+                            android:id="@+id/normal1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/fastpasta" />
 
                         <TextView
                             android:id="@+id/textView1"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Fast and Healthy High-Fibre Pasta"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -165,11 +207,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/normal2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/onepot" />
 
                         <TextView
                             android:id="@+id/textView2"
@@ -179,16 +222,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="One-pot Beef Stew"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -212,11 +262,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView3"
+                            android:id="@+id/normal3"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/chilistir" />
 
                         <TextView
                             android:id="@+id/textView3"
@@ -226,16 +277,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Chilli Beef Stir-Fry"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -249,15 +307,15 @@
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/bahnschrift"
-                android:text="Time To Buzz In For The Overweight"
+                android:text="Time To Buzz In For The Overweight >"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/Searcc" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card4"
@@ -277,30 +335,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/overweight1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/chickenmango" />
 
                         <TextView
                             android:id="@+id/textView4"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Chicken Mango Salad with Walnuts"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -324,30 +390,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView5"
+                            android:id="@+id/overweight2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/creamymixed" />
 
                         <TextView
                             android:id="@+id/textView16"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Creamy Mixed Vegetable and Pesto Bake"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -371,30 +445,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView6"
+                            android:id="@+id/overweight3"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/salmon" />
 
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Salmon with Spinach and Edamame Rice"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -408,7 +490,7 @@
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="You're Too Fit to Bee Underweight >"
@@ -416,7 +498,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/Searcc" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card7"
@@ -436,11 +518,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/underweight1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/maple" />
 
                         <TextView
                             android:id="@+id/textView7"
@@ -450,16 +533,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Maple Bacon Rissoles with Sweet Potato Hash"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -483,11 +573,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/underweight2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/esay" />
 
                         <TextView
                             android:id="@+id/textView8"
@@ -497,16 +588,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Easy Beef Stroganoff Cottage Pie"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -530,11 +628,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView9"
+                            android:id="@+id/underweight3"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/beefsoborro" />
 
                         <TextView
                             android:id="@+id/textView9"
@@ -544,16 +643,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Beef Soboro"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView16"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -567,7 +673,7 @@
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="Take A Break For Being Extremely Obese >"
@@ -575,7 +681,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/Searcc" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card10"
@@ -595,11 +701,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView10"
+                            android:id="@+id/exobese1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/cauli" />
 
                         <TextView
                             android:id="@+id/textView10"
@@ -609,16 +716,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Chicken Cauliflower Fried Rice"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView17"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -642,30 +756,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView11"
+                            android:id="@+id/exobese2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/pork" />
 
                         <TextView
                             android:id="@+id/textView11"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Pork Tacos with Grilled Peach Salsa"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView18"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -689,11 +811,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView12"
+                            android:id="@+id/exobese3"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/rainbow" />
 
                         <TextView
                             android:id="@+id/textView12"
@@ -703,16 +826,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Rainbow Slaw with Tahini Dressing"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView19"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -726,7 +856,7 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="Diet Meals For Obese Bees >"
@@ -734,7 +864,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/Searcc" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card13"
@@ -754,11 +884,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView13"
+                            android:id="@+id/obese1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/avo" />
 
                         <TextView
                             android:id="@+id/textView13"
@@ -768,16 +899,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Avocado yoghurt dip with vegetables"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView20"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -801,11 +939,12 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView14"
+                            android:id="@+id/obese2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/miso" />
 
                         <TextView
                             android:id="@+id/textView14"
@@ -815,16 +954,23 @@
                             android:layout_marginTop="35dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Miso eggplant with pickled vegetables"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView21"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -848,30 +994,38 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView15"
+                            android:id="@+id/obese3"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/beemi" />
+                            android:onClick="normal"
+                            app:srcCompat="@drawable/halo" />
 
                         <TextView
                             android:id="@+id/textView15"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_marginTop="30dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bahnschrift"
-                            android:text="Recipe Name"
+                            android:text="Vegetable and haloumi fritter salad"
                             android:textColor="@color/cardcolor"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/editText"
+                            app:layout_constraintBottom_toTopOf="@+id/Searcc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.069"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintVertical_bias="0.577" />
+
+                        <ImageView
+                            android:id="@+id/imageView22"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/heart" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -880,13 +1034,13 @@
             <Button
                 android:id="@+id/checklist"
                 android:layout_width="266dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginBottom="72dp"
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="25dp"
                 android:background="@drawable/mybutton"
                 android:fontFamily="@font/bahnschrift"
-                android:onClick="onBack"
+                android:onClick="inputBack"
                 android:text="BACK TO THE BEEHIVE"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:textColor="#fde694"

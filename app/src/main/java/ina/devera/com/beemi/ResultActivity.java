@@ -57,7 +57,7 @@ public class ResultActivity extends AppCompatActivity {
         String Evaluations = bundle.getString("Evaluation");
 
         Result.setText(" Result: " + Resulttext);
-        Age.setText("Age: " + Agetext);
+        Age.setText("Age: " + Agetext + " yr");
         Height.setText("Height: " + Heighttext + " cm");
         Weight.setText("Weight: " + Weighttext + " kg");
         Evaluation.setText("" + Evaluations);
@@ -129,7 +129,7 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(i);
     }
         public void onBack (View v) {
-        Intent i = null, chooser = null;
+        Intent i = null;
             i = new Intent(this, MainActivity.class);
         startActivity(i);
         }
